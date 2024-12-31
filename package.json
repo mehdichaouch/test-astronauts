@@ -1,0 +1,26 @@
+{
+  "name": "test-astronaut",
+  "version": "0.1.0",
+  "public": false,
+  "scripts": {
+    "lint": "npm run lint --ws",
+    "lint:fix": "npm run lint --fix --ws",
+    "test": "vitest",
+    "test:ui": "vitest --ui --coverage.enabled=true"
+    
+  },
+  "keywords": [],
+  "author": "Vincent Viaud",
+  "license": "ISC",
+  "workspaces": [
+    "apps/backend",
+    "apps/frontend",
+    "packages/core"
+  ],
+  "devDependencies": {
+    "oxlint": "^0.15.5",
+    "@vitest/coverage-v8": "^2.1.8",
+    "@vitest/ui": "^2.1.8",
+    "vitest": "^2.1.8"
+  }
+}

@@ -1,0 +1,136 @@
+:root {
+  --background-primary: #dcd7ba;
+  --background-secondary: #f2ecbc;
+  --background-tertiary: #c8c093;
+
+  --text-primary: #1f1f28;
+  --text-secondary: #54546d;
+  --text-muted: #727169;
+
+  --border-default: #c8c093;
+  --border-strong: #54546d;
+
+  --accent-primary: #7e9cd8;
+  --accent-secondary: #7fb4ca;
+
+  --link-default: #658594;
+  --link-hover: #7aa89f;
+  --link-visited: #957fb8;
+
+  --success: #98bb6c;
+  --warning: #ffa066;
+  --error: #ff5d62;
+  --info: #7fb4ca;
+
+  color-scheme: light dark;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: #1f1f28;
+    --background-secondary: #16161d;
+    --background-tertiary: #2a2a37;
+
+    --text-primary: #dcd7ba;
+    --text-secondary: #c8c093;
+    --text-muted: #727169;
+
+    --border-default: #54546d;
+    --border-strong: #c8c093;
+
+    --accent-primary: #7fb4ca;
+    --accent-secondary: #7e9cd8;
+
+    --link-default: #7aa89f;
+    --link-hover: #98bb6c;
+    --link-visited: #957fb8;
+  }
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: var(--link-default);
+  text-decoration: inherit;
+
+  &:hover {
+    color: var(--link-hover);
+  }
+
+  &:visited {
+    color: var(--link-visited);
+  }
+}
+
+h1 {
+  font-size: 2em;
+  margin-block-end: 0.67em;
+  margin-block-start: 0.67em;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--background-secondary);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  text-transform: none;
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  &:disabled {
+    color: var(--text-muted)
+  }
+}
+
+
+button, input, select {
+  margin: 0;
+}
+
+

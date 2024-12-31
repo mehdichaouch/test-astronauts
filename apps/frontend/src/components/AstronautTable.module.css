@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    td,
+    th {
+        padding: 6px;
+        text-align: left;
+        vertical-align: top;
+        word-wrap: break-word;
+    }
+
+    thead {
+        border-bottom: 1px solid var(--border-default);
+    }
+
+    tfoot {
+        border-top: 1px solid var(--border-default);
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: var(--background-secondary);
+    }
+
+    tbody tr:nth-child(even) button {
+        background-color: var(--background-tertiary);
+    }
+
+    button {
+        padding: 0.3em .6em;
+        margin: 0 .2em
+    }
+}

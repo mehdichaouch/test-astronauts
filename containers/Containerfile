@@ -1,0 +1,30 @@
+FROM node:lts-alpine AS builder
+WORKDIR /workspace
+
+COPY package*.json ./
+COPY apps/backend/package*.json ./apps/backend/
+COPY apps/frontend/package*.json ./apps/frontend/
+COPY packages/core/package*.json ./packages/core/
+
+RUN npm install
+
+COPY . .
+
+FROM node:lts-alpine AS base
+WORKDIR /workspace
+COPY --from=builder /workspace ./
+
+FROM base AS backend
+WORKDIR /workspace/apps/backend
+RUN apk --update add postgresql-client
+RUN chmod +x ./entrypoint.sh
+ENTRYPOINT ["/bin/sh", "./entrypoint.sh"]
+
+FROM backend AS backend-development
+CMD [ "npm", "run", "dev" ]
+
+FROM base AS frontend
+WORKDIR /workspace/apps/frontend
+
+FROM frontend AS frontend-development
+CMD [ "npm", "run", "dev" ]

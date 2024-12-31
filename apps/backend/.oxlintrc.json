@@ -1,0 +1,12 @@
+{
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "env": {
+    "browser": false
+  },
+  "overrides": [ ],
+  "plugins": ["import", "typescript", "vitest", "oxc"],
+  "settings": {}
+}
